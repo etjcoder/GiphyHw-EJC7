@@ -1,4 +1,9 @@
 
+//Need to get it so that every image when clicked will respond
+//Need to get it where an input creates a new button which works with the click functions
+//Need to adjust col-lengths for each image to be mobile responsive
+
+
 // JS file populates the button using an array of strings that I manually fill out
 // Create  for loop to create the button divs
 // When you click the button it sends the value to the Giphy API
@@ -13,6 +18,7 @@ var button
 var value
 var APIKey = "nsaE7HGaryen9cekkWHZYIy64JInPzwx"
 var search
+
 
 for (i = 0; i < topics.length; i++) {
 
@@ -55,7 +61,17 @@ $(".button").on("click", function(){
             searchImageURLanimate = searchArray[i].images.original.url;
             console.log(searchImageURLstart);
 
-            var outerDiv = $("<div>");
+            searchImageRating = searchArray[i].rating;
+
+            var imageCol = $("<div>");
+            $(imageCol).addClass("col-3")
+            $(imageCol).css("text-align", "center");
+
+            var ratingDiv = $("<div>");
+            $(ratingDiv).text("Image Rating is: "  + searchImageRating);
+            // $(ratingDiv).css("text-align", "center");
+            // $(outerDiv).css('position', 'relative');
+            // $(outerDiv).css('clear', 'both');
 
             var newGif = $('<img>');
             $(newGif).attr("src", searchImageURLstart);
@@ -65,20 +81,23 @@ $(".button").on("click", function(){
             $(newGif).attr("data-animate", searchImageURLanimate);
             $(newGif).attr("height", "200");
             $(newGif).attr("width", "200");
-            $(newGif).css("padding", "10");
+            // $(newGif).css("padding", "10");
 
             $(newGif).attr("alt", "Gif-Image" + [i]);
             
 
-            $(outerDiv).append(newGif);
+        
 
-            $("#images-holder").append(outerDiv);
+            $(imageCol).append(newGif);
+            $(imageCol).append(ratingDiv);
+
+            $("#images-holder").append(imageCol);
             // console.log(newGif[0].outerHTML);
 
             
 
         }
-
+        
         $("#gif-image").on("click", function(){
             console.log("you clicked an image!");
         
@@ -92,7 +111,6 @@ $(".button").on("click", function(){
             }
         
         })
-        
 
     });
 
