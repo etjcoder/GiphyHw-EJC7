@@ -14,7 +14,7 @@
 // Include rating of each Gif underneath it 
 
 
-var topics = ["Dogs", "Cats", "Squirrels", "Rabbits", "Fish", "lizards"];
+var topics = ["Dogs", "Cats", "Squirrels", "Rabbits", "Fish", "Lizards", "Hamsters", "Ferrets", "Snakes", "Eagles", "Birds", "Flamingos", "Ducks", "Hippos"];
 var button
 var value
 var APIKey = "nsaE7HGaryen9cekkWHZYIy64JInPzwx"
@@ -53,6 +53,7 @@ for (i = 0; i < topics.length; i++) {
 
 $(".button").on("click", function(){
 
+    $("#images-holder").empty();
     animalClicked = this.value;
     console.log(animalClicked);
     
@@ -81,7 +82,7 @@ $(".button").on("click", function(){
             searchImageRating = searchArray[i].rating;
 
             var imageCol = $("<div>");
-            $(imageCol).addClass("col-3")
+            $(imageCol).addClass("col-lg-3 col-md-4 col-sm-6")
             // $(imageCol).addClass()
             $(imageCol).css("text-align", "center");
 
