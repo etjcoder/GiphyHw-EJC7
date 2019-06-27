@@ -1,7 +1,8 @@
 
-//Need to get it so that every image when clicked will respond
-//Need to get it where an input creates a new button which works with the click functions
-//Need to adjust col-lengths for each image to be mobile responsive
+//Images wont change data state from still to animate when clicked after adding a new set of images to html
+//Seems to occur to every other set of images as you add. For example 1st set works, \
+//when adding a second set the 1st set stops working. When adding a 3rd set the 1st/3rd work but the 2nd stops working, and so on
+
 
 
 // JS file populates the button using an array of strings that I manually fill out
@@ -13,13 +14,27 @@
 // Include rating of each Gif underneath it 
 
 
-var topics = ["dogs", "cats", "squirrels", "rabbits", "fish", "lizards"];
+var topics = ["Dogs", "Cats", "Squirrels", "Rabbits", "Fish", "lizards"];
 var button
 var value
 var APIKey = "nsaE7HGaryen9cekkWHZYIy64JInPzwx"
 var search
 
+createButtons();
 
+$("#search-button").on("click", function() {
+    event.preventDefault();
+    var searchValue = $("#search-text").val();
+
+    topics.push(searchValue);
+    console.log(topics);
+
+    $("#button-container").empty();
+
+    createButtons();
+})
+
+function createButtons() {
 for (i = 0; i < topics.length; i++) {
 
     var animalChosen = topics[i];
@@ -65,6 +80,7 @@ $(".button").on("click", function(){
 
             var imageCol = $("<div>");
             $(imageCol).addClass("col-3")
+            // $(imageCol).addClass()
             $(imageCol).css("text-align", "center");
 
             var ratingDiv = $("<div>");
@@ -75,7 +91,7 @@ $(".button").on("click", function(){
 
             var newGif = $('<img>');
             $(newGif).attr("src", searchImageURLstart);
-            $(newGif).attr("id", "gif-image");
+            $(newGif).addClass("gif-image", "gif-image");
             $(newGif).attr("data-state", "still");
             $(newGif).attr("data-still", searchImageURLstill);
             $(newGif).attr("data-animate", searchImageURLanimate);
@@ -96,9 +112,9 @@ $(".button").on("click", function(){
 
             
 
-        }
-        
-        $("#gif-image").on("click", function(){
+        } 
+
+        $(".gif-image").on("click", function(){
             console.log("you clicked an image!");
         
             var state = $(this).attr("data-state");
@@ -114,9 +130,7 @@ $(".button").on("click", function(){
 
     });
 
-
-
-
-
 });
+
+};
 
