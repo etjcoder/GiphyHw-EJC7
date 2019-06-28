@@ -1,4 +1,12 @@
 #images-holder { 
 
-    background-color: lightblue;
+    background-color: black;
+}
+
+body {
+    background-image: url("http://cdn.sub.blue/images/gallery/planar/planar-1-960.jpg?20160905");
+}
+
+#images-container {
+    color: white;
 }

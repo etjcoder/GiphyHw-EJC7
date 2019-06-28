@@ -14,7 +14,7 @@
 // Include rating of each Gif underneath it 
 
 
-var topics = ["Dogs", "Cats", "Squirrels", "Rabbits", "Fish", "Lizards", "Hamsters", "Ferrets", "Snakes", "Eagles", "Birds", "Flamingos", "Ducks", "Hippos"];
+var topics = ["Michael Jordan", "Allen Iverson", "Joel Embiid", "Chase Utley", "Donovan McNabb", "Carson Wentz", "Nick Foles", "Lebron James"];
 var button
 var value
 var APIKey = "nsaE7HGaryen9cekkWHZYIy64JInPzwx"

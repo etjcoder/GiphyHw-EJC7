@@ -1,6 +1,7 @@
 <!-- var APIKey = nsaE7HGaryen9cekkWHZYIy64JInPzwx -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,33 +9,41 @@
     <title>Giphy Test Application</title>
 
     <!-- jQuery -->
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Bootstrap -->
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Personal Style Sheet -->
-    
+
     <link rel="stylesheet" href="assets/css/style.css">
 
 
 </head>
+
 <body>
-    <header>Giphy Search Application!</header>
-    
-    <div class="container" id="button-container"></div>
+    <div class="jumbtron bg-secondary text-center">
+        <header>
+            <h1>Athlete Search Applications</h1>
+        </header>
+    </div>
 
-    <form>
-        Search: <br>
-        <input type="text" name="Animal Type" id="search-text"><br>  
-        <input type="submit" value="Submit" id="search-button">
-    </form>
+    <div class="container">
+        <div class="container" id="button-container"></div>
 
-    <div class="container" id="images-container">
-        <div class="row" id="images-holder">
-            <!-- <div class="col" id="images-holder"></div> -->
+        <form>
+            Search: <br>
+            <input type="text" name="Animal Type" id="search-text">
+            <input type="submit" value="Submit" class="btn-dark" id="search-button">
+        </form>
+
+        <div class="container text-capitalize" id="images-container">
+            <div class="row" id="images-holder">
+                <!-- <div class="col" id="images-holder"></div> -->
+            </div>
         </div>
     </div>
 
@@ -42,4 +51,5 @@
     <script src="assets/javascript/app.js"></script>
 
 </body>
+
 </html>
